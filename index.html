@@ -1,98 +1,55 @@
-<!doctype html>
-<html lang="en-US">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Light Theme</title>
-<link href="css/singlePageTemplate.css" rel="stylesheet" type="text/css">
-<!--The following script tag downloads a font from the Adobe Edge Web Fonts server for use within the web page. We recommend that you do not modify it.-->
-<script>var __adobewebfontsappname__="dreamweaver"</script>
-<script src="http://use.edgefonts.net/source-sans-pro:n2:default.js" type="text/javascript"></script>
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feep Says</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>
+    <script>
+        function getRandomSentence() {
+            const sentences = [
+                "I HAVE ALWAYS BEEN A GOOD BOY AND I DARE YOU PROVE OTHERWISE",
+                "I would rather die",
+                "I'm not out here trying to convince you to commodify your hobby",
+                "If I can't make it easy, I won't do it",
+                "The harder you make it for yourself, the more life sucks",
+                "You fucking idiot. You absolute moron. You stupid guy. Fish can't walk",
+                "DINNER IS SERVED",
+                "I HAVE FLOATED IN THE LIMINAL VOID FOR 5 YEARS",
+                "NO ONE HAS DONE AS MUCH NOTHING AS ME",
+                "Faren ved preorder er"
+				"Vareulv, Vareulv, Vareulv er sej "
+            ];
+            const randomIndex = Math.floor(Math.random() * sentences.length);
+            return sentences[randomIndex] + " - Feep";
+        }
+
+        function displayRandomSentence() {
+            const sentenceElement = document.getElementById('random-sentence');
+            sentenceElement.innerText = getRandomSentence();
+        }
+    </script>
 </head>
-<body>
-<!-- Main Container -->
-<div class="container"> 
-  <!-- Navigation -->
-  <header> <a href="">
-    <h4 class="logo">HVAD SIGER FEEP</h4>
-    </a>
-    <nav>
-      <ul>
-        <li><a href="#hero">HOME</a></li>
-        <li><a href="#about">ABOUT</a></li>
-        <li> <a href="#contact">CONTACT</a></li>
-      </ul>
-    </nav>
-  </header>
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <img src="images/Untitled-4.png" width="564" height="752" alt=""/>
-    <h2 class="hero_header">HVAD SIGER FEEP???</h2>
-    <p class="tagline">Feep SIGER MANGE TING</p>
-  </section>
-  <!-- About Section -->
-  <section class="about" id="about">
-    <h2 class="hidden">About</h2>
-    <p class="text_column">ALT DET HER ER TEXT </p>
-    <p class="text_column">ALT DET HER ER TEXTALT DET HER ER TEXTALT DET HER ER TEXTALT DET HER ER TEXTALT DET HER ER TEXT </p>
-    <p class="text_column">ALT DET HER ER TEXTALT DET HER ER TEXTALT DET HER ER TEXT </p>
-  </section>
-  <!-- Stats Gallery Section -->
-  <div class="gallery">
-    <div class="thumbnail">
-      <h1 class="stats">1500</h1>
-      <h4>ORD OM DAGEN SIGER FEEP</h4>
-      <p>SIKKE EN MAND</p>
-    </div>
-    <div class="thumbnail">
-      <h1 class="stats">2300</h1>
-      <h4>NOVELLER SKRIVER HAN</h4>
-      <p>WOAWOWOW</p>
-    </div>
-    <div class="thumbnail">
-      <h1 class="stats">7500</h1>
-      <h4>TANKER I MINUTTET</h4>
-      <p>ORMANNER</p>
-    </div>
-    <div class="thumbnail">
-      <h1 class="stats">9870</h1>
-      <h4>PUNKTUMMER I SEKUNDET</h4>
-      <p>One line description</p>
-    </div>
-  </div>
-  <!-- Parallax Section -->
-  <section class="banner">
-    <h2 class="parallax">PARALLAX HERO</h2>
-    <p class="parallax_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-  </section>
-  <!-- More Info Section -->
-  <footer>
-    <article class="footer_column">
-      <h3>FEEP</h3>
-<img src="images/Philip_Cutout.png" width="385" height="1058" alt=""/>
-      <p>DETTE ER FEP DENKLOGE NOGEN KADLER HAM DEEP </p>
-    </article>
-    <article class="footer_column">
-      <h3>LOCATION</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud execitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla </p>
-    </article>
-  </footer>
-  <!-- Footer Section -->
-  <section class="footer_banner" id="contact">
-    <h2 class="hidden">Footer Banner Section </h2>
-    <p class="hero_header">FOR THE LATEST GODE ORD AF PHILIP</p>
-    <div class="button">subscribe TO HVAD SIGER FEEP</div>
-  </section>
-  <!-- Copyrights Section -->
-  <div class="copyright">&copy;2024 - <strong>Light Theme</strong></div>
-</div>
-<!-- Main Container Ends -->
+<body onload="displayRandomSentence()">
+<h1>Hvad Siger Feep</h1>
+    <p id="random-sentence"><em>" DINNER IS SERVED "</em> - Feep</p>
+    <img src="images/Philip_Cutout.png" width="385" height="358" alt=""/>
 </body>
 </html>
