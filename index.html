@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feep Says</title>
+    <title>Hvad Siger Feep</title>
     <style>
         body {
             display: flex;
@@ -34,8 +34,8 @@
                 "DINNER IS SERVED",
                 "I HAVE FLOATED IN THE LIMINAL VOID FOR 5 YEARS",
                 "NO ONE HAS DONE AS MUCH NOTHING AS ME",
-                "Faren ved preorder er"
-				"Vareulv, Vareulv, Vareulv er sej "
+                "Faren ved preorder er",
+                "Vareulv, Vareulv, Vareulv er sej "
             ];
             const randomIndex = Math.floor(Math.random() * sentences.length);
             return sentences[randomIndex] + " - Feep";
@@ -43,13 +43,15 @@
 
         function displayRandomSentence() {
             const sentenceElement = document.getElementById('random-sentence');
-            sentenceElement.innerText = getRandomSentence();
+            sentenceElement.innerHTML = `<em>"${getRandomSentence()}"</em>`;
         }
+
+        window.onload = displayRandomSentence;
     </script>
 </head>
-<body onload="displayRandomSentence()">
-<h1>Hvad Siger Feep</h1>
-    <p id="random-sentence"><em>" DINNER IS SERVED "</em> - Feep</p>
-    <img src="images/Philip_Cutout.png" width="385" height="358" alt=""/>
+<body>
+    <h1>Hvad Siger Feep</h1>
+    <p id="random-sentence"></p>
+    <img src="images/Philip_Cutout.png" width="385" height="358" alt="" onclick="displayRandomSentence()"/>
 </body>
 </html>
