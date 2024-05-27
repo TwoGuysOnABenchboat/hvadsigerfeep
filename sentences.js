@@ -30,7 +30,7 @@ const sentences = [
 ];
 
 
-function getRandomSentence() {
+function getRandomSentence(sentences) {
 
     
     const array = new Uint32Array(1);
@@ -53,7 +53,7 @@ function displayRandomSentence() {
 
     setTimeout(() => {
         // Change text after fade out
-        sentenceElement.innerHTML = `<em>"${getRandomSentence()}"</em> - Feep`;
+        sentenceElement.innerHTML = `<em>"${getRandomSentence(sentences)}"</em> - Feep`;
 
         // Change background color and title color
         changeBackgroundColor();
