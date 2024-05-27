@@ -29,7 +29,7 @@ const sentences = [
     "Everything is either a table, or a table leg",
     "I BEAT THE HOLE",
     "only if you are bad at both statistics, and guessing",
-    ```The hole.
+    `The hole.
     There is nothing in the hole.
     That is what a hole is; nothing.
     An hour.
@@ -39,21 +39,21 @@ const sentences = [
     You will understand.
     I did not leave.
     I was there all along.
-    With you.```,
+    With you.`,
     "it was supposed to imply I wish I could get a phd in less than a month by just posting on reddit, not that I crave the clussy",
     "Corporate office work environments is just the only form of contemporary interior design England has the creativity to accomplish",
     "Om du leder efter noget farligt, noget at rive virkeligheden fra hinanden med, eller bare noget at æde, så kom til Ærlige Philips Svampeemporium",
     "I didn't do anything, I just explained I actually was about to break out of my cage earlier, but that I stopped myself for everyone's well-being",
-    ```
+    `
     Fine, here, have my unfiltered opinion
-    you rube```,
+    you rube`,
 
     "at worst, you fuck up and give someone a deep tissue infection, or, in the case of chiropractic, sever a nerve or tendon",
     "we were trying to talk about shit here",
-    ```and as I waddle towards you, grunting, shit falling from my ass like hansel leaving his trail of odorous breadcrumbs the size, smell, 
+    `and as I waddle towards you, grunting, shit falling from my ass like hansel leaving his trail of odorous breadcrumbs the size, smell, 
     and consistency of beef and bean patties, thunk thunk thunk, your last thread of sanity is spent in prayer, not that you may survive, 
     not that time may reverse and take you away from this fecal fate, not even that your mind may show mercy on you and let you forget or 
-    that your death may be swift```,
+    that your death may be swift`,
 ];
 
 
