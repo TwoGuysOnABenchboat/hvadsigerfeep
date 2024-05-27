@@ -30,7 +30,7 @@ const sentences = [
 ];
 
 
-function getRandomSentence(sentences) {
+function getRandomSentence() {
 
     
     const array = new Uint32Array(1);
