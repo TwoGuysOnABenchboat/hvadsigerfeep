@@ -1,6 +1,5 @@
 const crypto = require('crypto');
 
-function getRandomSentence() {
     const sentences = [
         "I HAVE ALWAYS BEEN A GOOD BOY AND I DARE YOU PROVE OTHERWISE",
         "I would rather die",
@@ -30,9 +29,13 @@ function getRandomSentence() {
         "There's a selection for moral degeneracy as long as it's profitable. Until that changes, the monkey that kills for bananas ends up with more bananas than the monkey that doesn't",
         "Everything is either a table, or a table leg",
     ];
+
+
+function getRandomSentence(sentences) {
+
     
     const array = new Uint32Array(1);
-    crypto.randomFillSync(array);
+    window.crypto.getRandomValues(array);
     const randomIndex = array[0] % sentences.length;
     return sentences[randomIndex];
 }
