@@ -54,7 +54,7 @@ const sentences = [
     and consistency of beef and bean patties, thunk thunk thunk, your last thread of sanity is spent in prayer, not that you may survive, 
     not that time may reverse and take you away from this fecal fate, not even that your mind may show mercy on you and let you forget or 
     that your death may be swift`,
-    `Jeg har fuldstændig misted forstanden`,
+    `Jeg har fuldstændigt mistet forstanden`,
 ];
 
 
