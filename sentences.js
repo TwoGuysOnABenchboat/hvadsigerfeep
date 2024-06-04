@@ -55,6 +55,7 @@ const sentences = [
     not that time may reverse and take you away from this fecal fate, not even that your mind may show mercy on you and let you forget or 
     that your death may be swift`,
     `Jeg har fuldstændigt mistet forstanden`,
+    `it's very normal for humans to specify they are human`,
 ];
 
 
