@@ -58,7 +58,12 @@ const sentences = [
     `it's very normal for humans to specify they are human`,
     `NICOTINE IS AN ADDICTIVE STIMULANT AND THAT IS BAD AND I HAVE NO DELUSIONS ABOUT THAT`,
     "det bliver en øm tissemand, har lige sat mig til at æde og binge tv",
-
+     "jeg vil ha rigtige kvinder",
+    "siger det kun fordi jeg er uegnet til alt andet end videnskab",
+    "du finder ik en hest, der løber frem og tilbage for sjovt, ik i naturen",
+    "JEG STÅR IKKE TIL ANSVAR FOR MINE HANDLINGER ELLER UDTALELSER",
+    
+    
     
 ];
 
