@@ -56,6 +56,10 @@ const sentences = [
     that your death may be swift`,
     `Jeg har fuldstændigt mistet forstanden`,
     `it's very normal for humans to specify they are human`,
+    `NICOTINE IS AN ADDICTIVE STIMULANT AND THAT IS BAD AND I HAVE NO DELUSIONS ABOUT THAT`,
+    "det bliver en øm tissemand, har lige sat mig til at æde og binge tv",
+
+    
 ];
 
 
