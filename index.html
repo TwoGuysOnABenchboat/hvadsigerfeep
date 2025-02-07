@@ -3,44 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Animated Website</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #FFDA03;  /* Sunflower yellow */
-            background-image: url('graphics/background-image.png');
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-
-        #animated-image {
-            width: 300px;   /* Adjust width as needed */
-            height: 300px;  /* Adjust height as needed */
-        }
-    </style>
+    <title>Hvad Siger Feep</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Playfair+Display&display=swap" rel="stylesheet">
+    <script src="sentences.js" defer></script>
 </head>
-e<body>
-    <img id="animated-image" src="Graphics/Animation/frame1.png" alt="Animated Image" />
-
-    <script>
-        let frameIndex = 1;
-        const totalFrames = 25;  // Total number of frames
-        const imageElement = document.getElementById('animated-image');
-
-        function updateFrame() {
-            frameIndex = frameIndex % totalFrames + 1;  // Loop through frames 1 to totalFrames
-            imageElement.src = `Graphics/Animation/frame${frameIndex}.png`;  // Update the image source
-        }
-
-        setInterval(updateFrame, 100);  // Change frame every 100ms (10 FPS)
-    </script>
+<body>
+    <div class="container">
+        <h1>Hvad Siger Feep</h1>
+        <div class="quote-box">
+            <p id="random-sentence"></p>
+        </div>
+        <img src="images/Philip_Cutout.png" class="feep-image" alt="Click to get a new quote" onclick="displayRandomSentence()"/>
+    </div>
+    <audio id="background-music" src="audio/EGH3_16_EnGodHalloween.wav" loop autoplay></audio>
 </body>
 </html>
