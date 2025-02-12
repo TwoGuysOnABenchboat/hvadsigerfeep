@@ -1,0 +1,138 @@
+/* General Styles for All Pages */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Cloud Layers */
+.clouds-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh; /* Adjust height as needed */
+    overflow: hidden;
+    pointer-events: none; /* Prevents interaction */
+}
+
+.cloud-layer {
+    position: absolute;
+    width: 200%; /* Makes sure it repeats smoothly */
+    height: 350%;
+    background-repeat: repeat-x;
+}
+
+.cloud-layer.layer1 {
+    background-image: url('Graphics/clouds1.png');
+    background-size: contain;
+    animation: moveClouds1 96s linear infinite;
+}
+
+.cloud-layer.layer2 {
+    background-image: url('Graphics/clouds2.png');
+    background-size: contain;
+    animation: moveClouds2 78s linear infinite;
+    opacity: 1.0; /* Make second layer slightly transparent for depth */
+}
+
+@keyframes moveClouds1 {
+    from { transform: translateX(0); }
+    to { transform: translateX(-46%); }
+}
+
+@keyframes moveClouds2 {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Navigation Bar */
+.nav {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.nav a img {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+.nav a img:hover {
+    transform: scale(1.1);
+}
+
+/* Main Page Styling */
+.main-page {
+    background-color: #FFDA03; /* Sunflower yellow */
+    background-image: url('Graphics/background-image.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#animated-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 50vw; /* Scales with screen width */
+    max-height: 50vh; /* Scales with screen height */
+}
+
+#animated-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+}
+
+#animated-link:hover #animated-image {
+    transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+    #animated-link {
+        max-width: 70vw;
+        max-height: 70vh;
+    }
+}
+
+/* Choss Page Styling */
+.choss-page {
+    background-color: #000000;
+    background-image: url('../Graphics/choss-background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+.choss-container {
+    max-width: 600px;
+    padding: 20px;
+}
+
+/* About Page Styling */
+.about-page {
+    background-color: #000000;
+    background-image: url('../Graphics/about-background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 600px;
+    padding: 20px;
+}

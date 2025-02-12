@@ -3,44 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who is this</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #FFDA03;  /* Sunflower yellow */
-            background-image: url('Graphics/background-image2.png');  /* Adjust path as needed */
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-
-        #animated-image {
-            width: 300px;   /* Adjust width as needed */
-            height: 300px;  /* Adjust height as needed */
-        }
-    </style>
+    <title>Benchboat Games</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <img id="animated-image" src="Graphics/Animation/frame1.png" alt="Animated Image" />
+<body class="main-page">
+
+    <!-- Cloud Layers -->
+    <div class="clouds-container">
+        <div class="cloud-layer layer1"></div>
+        <div class="cloud-layer layer2"></div>
+    </div>
+
+    <div class="nav">
+        <a href="index.html"><img src="Graphics/Tabs/home.png" alt="Home"></a>
+        <a href="choss/index.html"><img src="Graphics/Tabs/choss.png" alt="Choss"></a>
+        <a href="about/index.html"><img src="Graphics/Tabs/about.png" alt="About"></a>
+    </div>
+
+    <a href="choss/index.html" id="animated-link">
+        <img id="animated-image" src="Graphics/Animation/frame1.png" alt="Benchboat Games Logo">
+    </a>
 
     <script>
         let frameIndex = 1;
-        const totalFrames = 25;  // Total number of frames
+        const totalFrames = 25;
         const imageElement = document.getElementById('animated-image');
 
         function updateFrame() {
-            frameIndex = frameIndex % totalFrames + 1;  // Loop through frames 1 to totalFrames
-            imageElement.src = `Graphics/Animation/frame${frameIndex}.png`;  // Update the image source
+            frameIndex = frameIndex % totalFrames + 1;
+            imageElement.src = `Graphics/Animation/frame${frameIndex}.png`;
         }
 
-        setInterval(updateFrame, 100);  // Change frame every 100ms (10 FPS)
+        setInterval(updateFrame, 100);
     </script>
 </body>
 </html>
