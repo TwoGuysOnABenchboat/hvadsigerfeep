@@ -4,65 +4,42 @@ body {
     padding: 0;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    font-family: Arial, sans-serif;
-    overflow: hidden;
+    justify-content: center;
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: var(--bg-color, #FFDA03);
+    color: var(--text-color, #000000);
+    overflow-x: hidden;
     position: relative;
 }
 
-/* Cloud Layers */
-.clouds-container {
+/* Import Pixel Font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Navigation Background Bar */
+.nav-bar {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 30vh; /* Adjust height as needed */
-    overflow: hidden;
-    pointer-events: none; /* Prevents interaction */
-}
-
-.cloud-layer {
-    position: absolute;
-    width: 200%; /* Makes sure it repeats smoothly */
-    height: 350%;
-    background-repeat: repeat-x;
-}
-
-.cloud-layer.layer1 {
-    background-image: url('Graphics/clouds1.png');
-    background-size: contain;
-    animation: moveClouds1 96s linear infinite;
-}
-
-.cloud-layer.layer2 {
-    background-image: url('Graphics/clouds2.png');
-    background-size: contain;
-    animation: moveClouds2 78s linear infinite;
-    opacity: 1.0; /* Make second layer slightly transparent for depth */
-}
-
-@keyframes moveClouds1 {
-    from { transform: translateX(0); }
-    to { transform: translateX(-46%); }
-}
-
-@keyframes moveClouds2 {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    height: 50px; /* Reduced height */
+    background-color: var(--nav-color, #FFDA03);
+    z-index: 10;
 }
 
 /* Navigation Bar */
 .nav {
     position: absolute;
-    top: 10px;
+    top: 5px;
     left: 10px;
     display: flex;
     gap: 10px;
+    z-index: 15;
 }
 
 .nav a img {
-    width: 50px; /* Adjust size as needed */
+    width: 50px;
     height: auto;
     transition: transform 0.2s ease-in-out;
 }
@@ -71,68 +48,157 @@ body {
     transform: scale(1.1);
 }
 
-/* Main Page Styling */
+/* Page-Specific Backgrounds */
 .main-page {
-    background-color: #FFDA03; /* Sunflower yellow */
+    --bg-color: #FFDA03;
+    --text-color: #000000;
     background-image: url('Graphics/background-image.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    position: relative;
 }
 
-#animated-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 50vw; /* Scales with screen width */
-    max-height: 50vh; /* Scales with screen height */
-}
-
-#animated-image {
-    width: 100%;
-    height: auto;
-    transition: transform 0.2s ease-in-out;
-}
-
-#animated-link:hover #animated-image {
-    transform: scale(0.95);
-}
-
-@media (max-width: 768px) {
-    #animated-link {
-        max-width: 70vw;
-        max-height: 70vh;
-    }
-}
-
-/* Choss Page Styling */
 .choss-page {
-    background-color: #000000;
-    background-image: url('../Graphics/choss-background.png');
+    --bg-color: #1A1A1A;
+    --text-color: #FF0000;
+    --nav-color: #FF0000;
+    background-image: url('Graphics/choss-background.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    color: #FFDA03;
-    text-align: center;
+    position: relative;
 }
 
-.choss-container {
-    max-width: 600px;
-    padding: 20px;
-}
-
-/* About Page Styling */
 .about-page {
-    background-color: #000000;
-    background-image: url('../Graphics/about-background.png');
+    --bg-color: #000000;
+    --text-color: #FFDA03;
+    /*background-image: url('Graphics/about-background.png');*/
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    color: #FFDA03;
-    text-align: center;
+    position: relative;
 }
 
-.about-container {
+/* Animated Logo Positioning */
+#animated-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    z-index: 5;
+}
+
+/* Cloud Layers */
+.clouds-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.cloud-layer {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat-x;
+}
+
+.cloud-layer.layer1 {
+    background-image: url('Graphics/clouds1.png');
+    background-size: contain;
+    animation: moveClouds1 96s linear infinite;
+    top: 5vh;
+}
+
+.cloud-layer.layer2 {
+    background-image: url('Graphics/clouds2.png');
+    background-size: contain;
+    animation: moveClouds2 78s linear infinite;
+    top: 10vh;
+    opacity: 0.7;
+}
+
+@keyframes moveClouds1 {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@keyframes moveClouds2 {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* About & Choss Page Containers */
+.about-container, .choss-container {
     max-width: 600px;
-    padding: 20px;
+    text-align: center;
+    padding: 40px;
+}
+
+.about-container h1, .choss-container h1 {
+    font-size: 18px;
+}
+
+.about-container p, .choss-container p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Footer Button Bar */
+.footer-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: var(--nav-color, #FF0000);
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+    color: white;
+}
+
+/* Remove Blue Email Link Color */
+.about-container a {
+    color: var(--text-color, #FFDA03);
+    text-decoration: none;
+}
+
+.about-container a:hover {
+    text-decoration: underline;
+}
+
+/* Hide the Current Page Tab */
+.nav a[data-current="true"] {
+    display: none;
+}
+
+/* Mobile Scaling */
+@media (max-width: 768px) {
+    .nav a img {
+        width: 40px;
+    }
+
+    .about-container h1, .choss-container h1 {
+        font-size: 16px;
+    }
+
+    .about-container p, .choss-container p {
+        font-size: 12px;
+    }
+
+    #logo-image {
+        width: 200px;
+    }
+    
+    #animated-link {
+        width: 200px;
+    }
 }

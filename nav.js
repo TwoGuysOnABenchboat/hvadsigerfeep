@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Detect if the page is in a subdirectory
     let pathPrefix = window.location.pathname.includes("/Choss") || window.location.pathname.includes("/About") ? "../" : "";
 
     let navbar = `
+        <div class="nav-bar"></div> <!-- This is the background bar -->
         <div class="nav">
             <a href="/"><img src="${pathPrefix}Graphics/Tabs/home.png" alt="Home"></a>
             <a href="/Choss"><img src="${pathPrefix}Graphics/Tabs/choss.png" alt="Choss"></a>
