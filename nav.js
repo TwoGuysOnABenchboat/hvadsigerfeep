@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let navbar = `
         <div class="nav">
             <a href="/"><img src="${pathPrefix}Graphics/Tabs/home.png" alt="Home"></a>
-            <a href="/Choss/index.html"><img src="${pathPrefix}Graphics/Tabs/choss.png" alt="Choss"></a>
-            <a href="/About/index.html"><img src="${pathPrefix}Graphics/Tabs/about.png" alt="About"></a>
+            <a href="/Choss"><img src="${pathPrefix}Graphics/Tabs/choss.png" alt="Choss"></a>
+            <a href="/About"><img src="${pathPrefix}Graphics/Tabs/about.png" alt="About"></a>
         </div>
     `;
 
