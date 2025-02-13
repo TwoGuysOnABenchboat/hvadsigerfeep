@@ -1,4 +1,5 @@
 /* General Styles for All Pages */
+/* General Styles for All Pages */
 body {
     margin: 0;
     padding: 0;
@@ -7,7 +8,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Press Start 2P', sans-serif;
+    font-family: 'Press Start 2P', cursive;
     background-color: var(--bg-color, #FFDA03);
     color: var(--text-color, #000000);
     overflow-x: hidden;
@@ -159,6 +160,22 @@ body {
     width: 100%;
     height: 40px;
     background-color: var(--nav-color, #FF0000);
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+    color: white;
+}
+/* Hide Navigation Tab for Current Page */
+.nav a[data-current="true"] {
+    display: none;
+}
+/* Footer Bar for Choss Page */
+.choss-page .footer-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #FF0000;
     text-align: center;
     font-size: 14px;
     line-height: 40px;
