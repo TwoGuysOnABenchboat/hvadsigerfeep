@@ -8,7 +8,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Press Start 2P', cursive !important;
     background-color: var(--bg-color, #FFDA03);
     color: var(--text-color, #000000);
     overflow-x: hidden;
@@ -24,7 +24,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px; /* Reduced height */
+    height: 32px; /* Reduced height */
     background-color: var(--nav-color, #FFDA03);
     z-index: 10;
 }
@@ -58,6 +58,9 @@ body {
     background-position: center;
     background-size: cover;
     position: relative;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 .choss-page {
@@ -71,6 +74,7 @@ body {
     position: relative;
 }
 
+
 .about-page {
     --bg-color: #000000;
     --text-color: #FFDA03;
@@ -80,6 +84,7 @@ body {
     background-size: cover;
     position: relative;
 }
+
 
 /* Animated Logo Positioning */
 #animated-link {
@@ -91,6 +96,24 @@ body {
     max-width: 100%;
     height: auto;
     z-index: 5;
+}
+#animated-link {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -50%);
+    width: 250px;
+    max-width: 100%;
+    height: auto;
+}
+#logo-image {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    max-width: 100%;
+    height: auto;
 }
 
 /* Cloud Layers */
@@ -108,7 +131,7 @@ body {
 .cloud-layer {
     position: absolute;
     width: 200%;
-    height: 100%;
+    height: 249%;
     background-repeat: repeat-x;
 }
 
@@ -122,9 +145,9 @@ body {
 .cloud-layer.layer2 {
     background-image: url('Graphics/clouds2.png');
     background-size: contain;
-    animation: moveClouds2 78s linear infinite;
+    animation: moveClouds2 221s linear infinite;
     top: 10vh;
-    opacity: 0.7;
+    opacity: 1.;
 }
 
 @keyframes moveClouds1 {
@@ -163,7 +186,7 @@ body {
     text-align: center;
     font-size: 14px;
     line-height: 40px;
-    color: white;
+    color: #000000;
 }
 /* Hide Navigation Tab for Current Page */
 .nav a[data-current="true"] {
@@ -179,8 +202,9 @@ body {
     text-align: center;
     font-size: 14px;
     line-height: 40px;
-    color: white;
+    color: #000000;
 }
+
 
 /* Remove Blue Email Link Color */
 .about-container a {
