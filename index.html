@@ -12,17 +12,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Micro+5&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body class="main-page">
-    <!-- Cloud Layers -->
+    <!-- Clouds, nav, etc. -->
     <div class="clouds-container">
         <div class="cloud-layer layer1"></div>
         <div class="cloud-layer layer2"></div>
     </div>
 
-    <div class="nav"></div> <!-- Navigation bar will be inserted here -->
+    <div class="nav"></div>
 
-    <a href="/Choss/index.html" id="animated-link">
-        <img id="animated-image" src="Graphics/Animation/frame1.png" alt="Benchboat Games Logo">
-    </a>
+    <div id="hero-container">
+        <img id="hero-bg" src="Graphics/background-image.png" alt="Sunrise Background">
+
+        <a href="/Choss/index.html" id="animated-link">
+            <img id="animated-image" src="Graphics/Animation/frame1.png" alt="Benchboat Games Logo">
+        </a>
+    </div>
 
     <script>
         let frameIndex = 1;
@@ -37,4 +41,6 @@
         setInterval(updateFrame, 100);
     </script>
 </body>
+
+
 </html>

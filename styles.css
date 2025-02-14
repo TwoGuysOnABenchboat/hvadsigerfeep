@@ -62,12 +62,12 @@ body {
    PAGE-SPECIFIC STYLES
    ========================= */
 .main-page {
-    --bg-color: #FFDA03;
+    /*--bg-color: #FFDA03;*/
     --text-color: #000000;
-    background-image: url('Graphics/background-image.png');
+    /*background-image: url('Graphics/background-image.png');*/
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    /*background-size: cover;*/
     image-rendering: pixelated;
 }
 
@@ -93,11 +93,43 @@ body {
 /* =========================
    LOGO & ANIMATED LINK
    ========================= */
+#hero-container {
+    position: relative;
+    width: 100vw;  /* Full width of browser */
+    height: 100vh; /* Full height of browser */
+    overflow: hidden; /* Hide anything off the edges */
+}
+
+/* The sunrise image – keep it at full width so it scales nicely */
+#hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* These 2 lines ensure the image “covers” the container, like CSS background-size: cover */
+    object-fit: cover; 
+    object-position: center; /* Center the image if sides are clipped */
+    display: block;
+}
+
 #animated-link {
-    position: center;
-    size: cover;
-    transform: scale(50vw, 50vw);
+    position: absolute;
+    /* Tweak top/left to match exactly where you want the boat on the sunrise */
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* Boat width as some fraction of screen height: */
+    width: 32vh;   /* or 12vh, 20vh, etc. */
+    pointer-events: auto;
     z-index: 5;
+}
+
+#animated-image {
+    width: 100%;
+    height: auto;
 }
 
 #logo-image {
@@ -236,6 +268,7 @@ body {
     }
     
     #animated-link {
-        width: 512px;
+        width: 71vw; /* Slightly bigger on mobile */
+        max-width: 512; /* Prevents it from being too large */
     }
 }
