@@ -134,6 +134,9 @@ body {
     width: 200%;
     height: 249%;
     background-repeat: repeat-x;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 .cloud-layer.layer1 {
@@ -141,6 +144,9 @@ body {
     background-size: contain;
     animation: moveClouds1 96s linear infinite;
     top: 5vh;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 .cloud-layer.layer2 {
@@ -149,6 +155,9 @@ body {
     animation: moveClouds2 221s linear infinite;
     top: 10vh;
     opacity: 1;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 @keyframes moveClouds1 {
