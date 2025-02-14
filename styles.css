@@ -94,13 +94,9 @@ body {
    LOGO & ANIMATED LINK
    ========================= */
 #animated-link {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-100%, -50%);
-    width: 250px;
-    max-width: 100%;
-    height: auto;
+    position: center;
+    size: cover;
+    transform: scale(50vw, 50vw);
     z-index: 5;
 }
 
@@ -137,6 +133,7 @@ body {
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: -webkit-optimize-contrast;
+    will-change: transform;
 }
 
 .cloud-layer.layer1 {
@@ -144,9 +141,6 @@ body {
     background-size: contain;
     animation: moveClouds1 96s linear infinite;
     top: 5vh;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
 }
 
 .cloud-layer.layer2 {
@@ -155,19 +149,16 @@ body {
     animation: moveClouds2 221s linear infinite;
     top: 10vh;
     opacity: 1;
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: -webkit-optimize-contrast;
 }
 
 @keyframes moveClouds1 {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to { transform: translateX(-50vw); }
 }
 
 @keyframes moveClouds2 {
     from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
+    to { transform: translateX(-50vw); }
 }
 
 
@@ -245,6 +236,6 @@ body {
     }
     
     #animated-link {
-        width: 200px;
+        width: 512px;
     }
 }
