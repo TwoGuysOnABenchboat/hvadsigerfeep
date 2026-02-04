@@ -16,7 +16,7 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Micro 5', sans-serif !important;
-     background-color: var(--bg-color, var(--bench-yellow));
+    background-color: var(--bg-color, var(--bench-yellow));
     color: var(--text-color, var(--bench-black));
     --nav-color: var(--bench-yellow);
     --nav-text-color: var(--bench-black);
@@ -51,6 +51,7 @@ body {
 }
 
 .nav a {
+    font-family: "Press Start 2P", "Micro 5", sans-serif;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -58,11 +59,11 @@ body {
     border: 2px solid currentColor;
     border-radius: 6px;
     font-size: 18px;
-    fon                     t-weight: 700;
+    font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-decoration: none;
-                                                                                                                                     color: var(--nav-text-color, var(--bench-black));
+    color: var(--nav-text-color, var(--bench-black));
     background-color: var(--nav-color, var(--bench-yellow));
     transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
@@ -228,20 +229,24 @@ body {
 .liminal-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     gap: 16px;
-    width: min(1100px, 92vw);
-    max-width: 1100px;
+    width: 100%;
+    max-width: none;
+    padding-top: 32px;
+    padding-bottom: 48px;
 }
 
 .liminal-banner {
     width: 100%;
     height: auto;
+    display: block;
 }
 
 .liminal-copy {
-    max-width: 720px;
+    max-width: min(720px, 92vw);
     text-align: center;
+    margin: 0 auto;
 }
 
 .video-grid {
@@ -261,7 +266,7 @@ body {
 }
 
 .liminal-video iframe {
-    width: min(980px, 100%);
+    width: min(100%, 980px);
 }
 
 .about-container h1, .choss-container h1, .liminal-container h1 {
@@ -300,6 +305,123 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.blog-page {
+    --bg-color: var(--bench-white);
+    --text-color: var(--bench-black);
+    --nav-color: var(--bench-yellow);
+    --nav-text-color: var(--bench-black);
+}
+
+.blog-container {
+    width: min(1100px, 92vw);
+    padding: 80px 0 60px;
+    text-align: left;
+}
+
+.blog-hero {
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.blog-hero h1 {
+    font-size: 36px;
+    margin: 0 0 10px;
+}
+
+.blog-hero p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.blog-post-list {
+    display: grid;
+    gap: 24px;
+}
+
+.blog-post-card {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: minmax(180px, 320px) 1fr;
+    align-items: start;
+    text-decoration: none;
+    color: inherit;
+    background-color: rgba(244, 206, 12, 0.08);
+    border: 2px solid var(--bench-black);
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.blog-post-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.blog-post-meta h2 {
+    margin: 0 0 8px;
+    font-size: 24px;
+}
+
+.blog-post-meta p {
+    margin: 0 0 8px;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.blog-post-meta span {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.blog-post-page {
+    --bg-color: var(--bench-white);
+    --text-color: var(--bench-black);
+    --nav-color: var(--bench-yellow);
+    --nav-text-color: var(--bench-black);
+}
+
+.blog-post-container {
+    width: min(900px, 92vw);
+    padding: 80px 0 60px;
+    text-align: left;
+}
+
+.blog-post-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    margin-bottom: 24px;
+}
+
+.blog-post-container h1 {
+    margin: 0 0 8px;
+    font-size: 36px;
+}
+
+.blog-post-container .blog-post-date {
+    margin: 0 0 24px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.blog-post-container p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 0 0 16px;
+}
+
+.blog-post-media {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    margin: 24px 0;
 }
 
 
@@ -342,6 +464,10 @@ body {
 
     .liminal-banner {
         width: min(640px, 90vw);
+    }
+
+    .blog-post-card {
+        grid-template-columns: 1fr;
     }
 
     #logo-image {
