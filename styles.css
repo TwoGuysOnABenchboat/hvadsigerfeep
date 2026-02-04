@@ -448,7 +448,7 @@ body.main-page::before {
     height: auto;
     display: block;
     border-radius: 0;
-    margin: -32px -32px 24px;
+    margin: 0 -32px 24px;
     max-width: none;
 }
 
@@ -460,6 +460,8 @@ body.main-page::before {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+    position: relative;
+    z-index: 2;
 }
 
 .blog-post-container h1 {
@@ -475,14 +477,14 @@ body.main-page::before {
 }
 
 .blog-post-container p {
-    font-family: "IBM Plex Mono", "Micro 5", sans-serif;
+    font-family: "IBM Plex Mono", "Micro 5", sans-serif !important;
     font-size: 20px;
     line-height: 1.6;
     margin: 0 0 16px;
 }
 
 .blog-post-meta p {
-    font-family: "IBM Plex Mono", "Micro 5", sans-serif;
+    font-family: "IBM Plex Mono", "Micro 5", sans-serif !important;
 }
 
 .blog-post-media {
