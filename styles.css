@@ -44,8 +44,19 @@ body > * {
     z-index: 1;
 }
 
+body.blog-page::before,
+body.blog-post-page::before {
+    opacity: 0.2;
+}
+
+body.main-page::before {
+    background-image: url("Graphics/texture2.png");
+    opacity: 0.08;
+}
+
 /* Import Pixel Font */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 
 /* =========================
@@ -214,14 +225,14 @@ body > * {
 .cloud-layer.layer1 {
     background-image: url('Graphics/clouds1.png');
     background-size: contain;
-    animation: moveClouds1 96s linear infinite;
+    animation: moveClouds1 160s steps(120) infinite;
     top: 5vh;
 }
 
 .cloud-layer.layer2 {
     background-image: url('Graphics/clouds2.png');
     background-size: contain;
-    animation: moveClouds2 221s linear infinite;
+    animation: moveClouds2 320s steps(160) infinite;
     top: 10vh;
     opacity: 1;
 }
@@ -351,7 +362,7 @@ body > * {
 
 .blog-container {
     width: min(1100px, 92vw);
-    padding: 80px 0 60px;
+    padding: 96px 0 60px;
     text-align: left;
 }
 
@@ -428,16 +439,17 @@ body > * {
 
 .blog-post-container {
     width: min(900px, 92vw);
-    padding: 80px 0 60px;
+    padding: 96px 0 60px;
     text-align: left;
 }
 
 .blog-post-banner {
-    width: 100%;
+    width: calc(100% + 64px);
     height: auto;
     display: block;
     border-radius: 0;
-    margin-bottom: 24px;
+    margin: -32px -32px 24px;
+    max-width: none;
 }
 
 .blog-back {
@@ -463,9 +475,14 @@ body > * {
 }
 
 .blog-post-container p {
+    font-family: "IBM Plex Mono", "Micro 5", sans-serif;
     font-size: 20px;
     line-height: 1.6;
     margin: 0 0 16px;
+}
+
+.blog-post-meta p {
+    font-family: "IBM Plex Mono", "Micro 5", sans-serif;
 }
 
 .blog-post-media {
