@@ -1,6 +1,12 @@
 /* =========================
    GENERAL STYLES
    ========================= */
+:root {
+    --bench-black: #16150F;
+    --bench-yellow: #F4CE0C;
+    --bench-white: #F5F2EA;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -10,10 +16,10 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Micro 5', sans-serif !important;
-    background-color: var(--bg-color, #FFDA03);
-    color: var(--text-color, #000000);
-    --nav-color: #FFDA03;
-    --nav-text-color: #000000;
+     background-color: var(--bg-color, var(--bench-yellow));
+    color: var(--text-color, var(--bench-black));
+    --nav-color: var(--bench-yellow);
+    --nav-text-color: var(--bench-black);
     overflow-x: hidden;
     position: relative;
 }
@@ -31,7 +37,7 @@ body {
     left: 0;
     width: 100%;
     height: 32px;
-    background-color: var(--nav-color, #FFDA03);
+    background-color: var(--nav-color, var(--bench-yellow));
     z-index: 10;
 }
 
@@ -52,12 +58,12 @@ body {
     border: 2px solid currentColor;
     border-radius: 6px;
     font-size: 18px;
-    font-weight: 700;
+    fon                     t-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--nav-text-color, #000000);
-    background-color: var(--nav-color, #FFDA03);
+                                                                                                                                     color: var(--nav-text-color, var(--bench-black));
+    background-color: var(--nav-color, var(--bench-yellow));
     transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
@@ -77,7 +83,7 @@ body {
    ========================= */
 .main-page {
     /*--bg-color: #FFDA03;*/
-    --text-color: #000000;
+    --text-color: var(--bench-black);
     /*background-image: url('Graphics/background-image.png');*/
     background-repeat: no-repeat;
     background-position: center;
@@ -89,7 +95,7 @@ body {
     --bg-color: #1A1A1A;
     --text-color: #FF0000;
     --nav-color: #FF0000;
-    --nav-text-color: #000000;
+    --nav-text-color: var(--bench-black);
     background-image: url('Graphics/choss-background.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -97,9 +103,9 @@ body {
 }
 
 .about-page {
-    --bg-color: #000000;
-    --text-color: #FFDA03;
-    --nav-text-color: #000000;
+    --bg-color: var(--bench-black);
+    --text-color: var(--bench-yellow);
+    --nav-text-color: var(--bench-black);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -223,12 +229,19 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
+    gap: 16px;
+    width: min(1100px, 92vw);
+    max-width: 1100px;
 }
 
 .liminal-banner {
-    width: min(900px, 90vw);
+    width: 100%;
     height: auto;
+}
+
+.liminal-copy {
+    max-width: 720px;
+    text-align: center;
 }
 
 .video-grid {
@@ -245,6 +258,10 @@ body {
     aspect-ratio: 16 / 9;
     height: auto;
     border: 0;
+}
+
+.liminal-video iframe {
+    width: min(980px, 100%);
 }
 
 .about-container h1, .choss-container h1, .liminal-container h1 {
@@ -267,7 +284,7 @@ body {
 }
 
 .about-container a {
-    color: var(--text-color, #FFDA03);
+    color: var(--text-color, var(--bench-yellow));
     text-decoration: none;
 }
 
@@ -276,10 +293,10 @@ body {
 }
 
 .liminal-page {
-    --bg-color: #0b0b0b;
-    --text-color: #ffda03;
-    --nav-color: #ffda03;
-    --nav-text-color: #000000;
+    --bg-color: var(--bench-black);
+    --text-color: var(--bench-yellow);
+    --nav-color: var(--bench-yellow);
+    --nav-text-color: var(--bench-black);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -298,7 +315,7 @@ body {
     text-align: center;
     font-size: 24px;
     line-height: 40px;
-    color: #000000;
+    color: var(--bench-black);
 }
 
 .choss-page .footer-bar {
