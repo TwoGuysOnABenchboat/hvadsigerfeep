@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="nav">
             ${currentPath !== "/" ? `<a class="nav-link" href="/">Home</a>` : ""}
             ${!currentPath.includes("/liminalbrutalis") ? `<a class="nav-link" href="/LiminalBrutalis">Liminal Brutalis</a>` : ""}
+            ${!currentPath.includes("/blog") ? `<a class="nav-link" href="/Blog">Blog</a>` : ""}
             ${!currentPath.includes("/about") ? `<a class="nav-link" href="/About">About</a>` : ""}
         </div>
     `;
