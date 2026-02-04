@@ -16,7 +16,7 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Micro 5', sans-serif !important;
-    background-color: var(--bg-color, var(--bench-yellow));
+     background-color: var(--bg-color, var(--bench-yellow));
     color: var(--text-color, var(--bench-black));
     --nav-color: var(--bench-yellow);
     --nav-text-color: var(--bench-black);
@@ -58,11 +58,11 @@ body {
     border: 2px solid currentColor;
     border-radius: 6px;
     font-size: 18px;
-    font-weight: 700;
+    fon                     t-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--nav-text-color, var(--bench-black));
+                                                                                                                                     color: var(--nav-text-color, var(--bench-black));
     background-color: var(--nav-color, var(--bench-yellow));
     transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
