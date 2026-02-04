@@ -7,6 +7,7 @@
     <title>Benchboat Games</title>
     <link rel="stylesheet" href="styles.css">
     <script src="nav.js" defer></script>
+    <script src="hero-animation.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Micro+5&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
@@ -20,26 +21,13 @@
 
     <div class="nav"></div>
 
-    <div id="hero-container">
+    <main id="hero-container">
         <img id="hero-bg" src="Graphics/background-image.png" alt="Sunrise Background">
 
         <a href="/Choss/index.html" id="animated-link">
             <img id="animated-image" src="Graphics/Animation/frame1.png" alt="Benchboat Games Logo">
         </a>
-    </div>
-
-    <script>
-        let frameIndex = 1;
-        const totalFrames = 25;
-        const imageElement = document.getElementById('animated-image');
-
-        function updateFrame() {
-            frameIndex = frameIndex % totalFrames + 1;
-            imageElement.src = `Graphics/Animation/frame${frameIndex}.png`;
-        }
-
-        setInterval(updateFrame, 100);
-    </script>
+    </main>
 </body>
 
 

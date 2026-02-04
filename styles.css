@@ -1,6 +1,12 @@
 /* =========================
    GENERAL STYLES
    ========================= */
+:root {
+    --bench-black: #16150F;
+    --bench-yellow: #F4CE0C;
+    --bench-white: #F5F2EA;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -10,8 +16,10 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Micro 5', sans-serif !important;
-    background-color: var(--bg-color, #FFDA03);
-    color: var(--text-color, #000000);
+    background-color: var(--bg-color, var(--bench-yellow));
+    color: var(--text-color, var(--bench-black));
+    --nav-color: var(--bench-yellow);
+    --nav-text-color: var(--bench-black);
     overflow-x: hidden;
     position: relative;
 }
@@ -29,7 +37,7 @@ body {
     left: 0;
     width: 100%;
     height: 32px;
-    background-color: var(--nav-color, #FFDA03);
+    background-color: var(--nav-color, var(--bench-yellow));
     z-index: 10;
 }
 
@@ -42,14 +50,26 @@ body {
     z-index: 15;
 }
 
-.nav a img {
-    width: 50px;
-    height: auto;
-    transition: transform 0.2s ease-in-out;
+.nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    border: 2px solid currentColor;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--nav-text-color, var(--bench-black));
+    background-color: var(--nav-color, var(--bench-yellow));
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
-.nav a img:hover {
-    transform: scale(1.1);
+.nav a:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
 }
 
 /* Hide Navigation Tab for Current Page */
@@ -63,7 +83,7 @@ body {
    ========================= */
 .main-page {
     /*--bg-color: #FFDA03;*/
-    --text-color: #000000;
+    --text-color: var(--bench-black);
     /*background-image: url('Graphics/background-image.png');*/
     background-repeat: no-repeat;
     background-position: center;
@@ -75,6 +95,7 @@ body {
     --bg-color: #1A1A1A;
     --text-color: #FF0000;
     --nav-color: #FF0000;
+    --nav-text-color: var(--bench-black);
     background-image: url('Graphics/choss-background.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -82,8 +103,9 @@ body {
 }
 
 .about-page {
-    --bg-color: #000000;
-    --text-color: #FFDA03;
+    --bg-color: var(--bench-black);
+    --text-color: var(--bench-yellow);
+    --nav-text-color: var(--bench-black);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -197,33 +219,87 @@ body {
 /* =========================
    PAGE CONTENT CONTAINERS
    ========================= */
-.about-container, .choss-container {
+.about-container, .choss-container, .liminal-container {
     max-width: 550px;
     text-align: center;
     padding: 40px;
 }
 
-.about-container h1, .choss-container h1 {
+.liminal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: min(1100px, 92vw);
+    max-width: 1100px;
+}
+
+.liminal-banner {
+    width: 100%;
+    height: auto;
+}
+
+.liminal-copy {
+    max-width: 720px;
+    text-align: center;
+}
+
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 24px 80px;
+}
+
+.video-grid iframe {
+    width: min(560px, 90vw);
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+}
+
+.liminal-video iframe {
+    width: min(980px, 100%);
+}
+
+.about-container h1, .choss-container h1, .liminal-container h1 {
     position: relative;
     top: 50%;
     left: 0;
     font-size: 28px;
 }
 
-.about-container p, .choss-container p {
+.about-container p, .choss-container p, .liminal-container p {
     position: relative;
     top: 59%;
     font-size: 32px;
     line-height: 1.5;
 }
 
+.liminal-container h1,
+.liminal-container p {
+    position: static;
+}
+
 .about-container a {
-    color: var(--text-color, #FFDA03);
+    color: var(--text-color, var(--bench-yellow));
     text-decoration: none;
 }
 
 .about-container a:hover {
     text-decoration: underline;
+}
+
+.liminal-page {
+    --bg-color: var(--bench-black);
+    --text-color: var(--bench-yellow);
+    --nav-color: var(--bench-yellow);
+    --nav-text-color: var(--bench-black);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 
@@ -239,7 +315,7 @@ body {
     text-align: center;
     font-size: 24px;
     line-height: 40px;
-    color: #000000;
+    color: var(--bench-black);
 }
 
 .choss-page .footer-bar {
@@ -251,16 +327,21 @@ body {
    RESPONSIVE DESIGN
    ========================= */
 @media (max-width: 768px) {
-    .nav a img {
-        width: 40px;
+    .nav a {
+        font-size: 14px;
+        padding: 4px 8px;
     }
 
-    .about-container h1, .choss-container h1 {
+    .about-container h1, .choss-container h1, .liminal-container h1 {
         font-size: 16px;
     }
 
-    .about-container p, .choss-container p {
+    .about-container p, .choss-container p, .liminal-container p {
         font-size: 12px;
+    }
+
+    .liminal-banner {
+        width: min(640px, 90vw);
     }
 
     #logo-image {
