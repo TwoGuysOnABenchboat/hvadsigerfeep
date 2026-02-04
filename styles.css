@@ -203,6 +203,22 @@ body {
     padding: 40px;
 }
 
+.video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 24px 80px;
+}
+
+.video-grid iframe {
+    width: min(560px, 90vw);
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+}
+
 .about-container h1, .choss-container h1 {
     position: relative;
     top: 50%;
