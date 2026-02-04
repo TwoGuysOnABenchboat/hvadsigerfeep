@@ -5,6 +5,8 @@
     --bench-black: #16150F;
     --bench-yellow: #F4CE0C;
     --bench-white: #F5F2EA;
+    --bench-retro: #D09B1D;
+    --bench-texture: url("Graphics/texture.png");
 }
 
 body {
@@ -22,6 +24,24 @@ body {
     --nav-text-color: var(--bench-black);
     overflow-x: hidden;
     position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: var(--bench-texture);
+    background-repeat: repeat;
+    background-size: 256px 256px;
+    opacity: 0.12;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* Import Pixel Font */
@@ -233,8 +253,12 @@ body {
     gap: 16px;
     width: 100%;
     max-width: none;
-    padding-top: 32px;
+    padding-top: 0;
     padding-bottom: 48px;
+}
+
+.liminal-hero {
+    position: relative;
 }
 
 .liminal-banner {
@@ -243,10 +267,20 @@ body {
     display: block;
 }
 
+.liminal-overlay {
+    position: relative;
+    margin-top: -120px;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .liminal-copy {
     max-width: min(720px, 92vw);
     text-align: center;
     margin: 0 auto;
+    text-shadow: 0 2px 8px rgba(22, 21, 15, 0.6);
 }
 
 .video-grid {
@@ -267,6 +301,7 @@ body {
 
 .liminal-video iframe {
     width: min(100%, 980px);
+    box-shadow: 0 12px 24px rgba(22, 21, 15, 0.4);
 }
 
 .about-container h1, .choss-container h1, .liminal-container h1 {
@@ -308,7 +343,7 @@ body {
 }
 
 .blog-page {
-    --bg-color: var(--bench-white);
+    --bg-color: var(--bench-retro);
     --text-color: var(--bench-black);
     --nav-color: var(--bench-yellow);
     --nav-text-color: var(--bench-black);
@@ -318,6 +353,13 @@ body {
     width: min(1100px, 92vw);
     padding: 80px 0 60px;
     text-align: left;
+}
+
+.blog-surface {
+    background-color: var(--bench-white);
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 18px 32px rgba(22, 21, 15, 0.18);
 }
 
 .blog-hero {
@@ -378,7 +420,7 @@ body {
 }
 
 .blog-post-page {
-    --bg-color: var(--bench-white);
+    --bg-color: var(--bench-retro);
     --text-color: var(--bench-black);
     --nav-color: var(--bench-yellow);
     --nav-text-color: var(--bench-black);
@@ -394,8 +436,18 @@ body {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 16px;
+    border-radius: 0;
     margin-bottom: 24px;
+}
+
+.blog-back {
+    display: inline-flex;
+    margin-bottom: 16px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 .blog-post-container h1 {
@@ -464,6 +516,15 @@ body {
 
     .liminal-banner {
         width: min(640px, 90vw);
+    }
+
+    .liminal-overlay {
+        margin-top: -80px;
+        padding: 0 16px;
+    }
+
+    .blog-surface {
+        padding: 24px;
     }
 
     .blog-post-card {
