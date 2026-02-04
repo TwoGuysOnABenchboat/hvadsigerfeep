@@ -12,6 +12,8 @@ body {
     font-family: 'Micro 5', sans-serif !important;
     background-color: var(--bg-color, #FFDA03);
     color: var(--text-color, #000000);
+    --nav-color: #FFDA03;
+    --nav-text-color: #000000;
     overflow-x: hidden;
     position: relative;
 }
@@ -54,14 +56,14 @@ body {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--text-color, #000000);
-    background-color: rgba(255, 218, 3, 0.85);
+    color: var(--nav-text-color, #000000);
+    background-color: var(--nav-color, #FFDA03);
     transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .nav a:hover {
     transform: translateY(-1px);
-    background-color: rgba(255, 218, 3, 1);
+    filter: brightness(1.05);
 }
 
 /* Hide Navigation Tab for Current Page */
@@ -87,6 +89,7 @@ body {
     --bg-color: #1A1A1A;
     --text-color: #FF0000;
     --nav-color: #FF0000;
+    --nav-text-color: #000000;
     background-image: url('Graphics/choss-background.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -96,6 +99,7 @@ body {
 .about-page {
     --bg-color: #000000;
     --text-color: #FFDA03;
+    --nav-text-color: #000000;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -215,6 +219,18 @@ body {
     padding: 40px;
 }
 
+.liminal-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.liminal-banner {
+    width: min(900px, 90vw);
+    height: auto;
+}
+
 .video-grid {
     display: flex;
     flex-wrap: wrap;
@@ -245,6 +261,11 @@ body {
     line-height: 1.5;
 }
 
+.liminal-container h1,
+.liminal-container p {
+    position: static;
+}
+
 .about-container a {
     color: var(--text-color, #FFDA03);
     text-decoration: none;
@@ -258,6 +279,7 @@ body {
     --bg-color: #0b0b0b;
     --text-color: #ffda03;
     --nav-color: #ffda03;
+    --nav-text-color: #000000;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -299,6 +321,10 @@ body {
 
     .about-container p, .choss-container p, .liminal-container p {
         font-size: 12px;
+    }
+
+    .liminal-banner {
+        width: min(640px, 90vw);
     }
 
     #logo-image {
