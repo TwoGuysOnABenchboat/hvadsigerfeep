@@ -369,7 +369,7 @@ body.main-page::before {
 .blog-surface {
     background-color: var(--bench-white);
     border-radius: 18px;
-    padding: 32px;
+    padding: 48px 32px 32px;
     box-shadow: 0 18px 32px rgba(22, 21, 15, 0.18);
 }
 
@@ -439,8 +439,9 @@ body.main-page::before {
 
 .blog-post-container {
     width: min(900px, 92vw);
-    padding: 96px 0 60px;
+    padding: 120px 0 60px;
     text-align: left;
+    font-family: "IBM Plex Mono", "Micro 5", sans-serif;
 }
 
 .blog-post-banner {
@@ -454,7 +455,7 @@ body.main-page::before {
 
 .blog-back {
     display: inline-flex;
-    margin-bottom: 16px;
+    margin: 8px 0 16px;
     text-decoration: none;
     color: inherit;
     font-size: 14px;
