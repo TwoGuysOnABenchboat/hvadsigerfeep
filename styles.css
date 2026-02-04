@@ -42,14 +42,26 @@ body {
     z-index: 15;
 }
 
-.nav a img {
-    width: 50px;
-    height: auto;
-    transition: transform 0.2s ease-in-out;
+.nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 10px;
+    border: 2px solid currentColor;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-color, #000000);
+    background-color: rgba(255, 218, 3, 0.85);
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
-.nav a img:hover {
-    transform: scale(1.1);
+.nav a:hover {
+    transform: translateY(-1px);
+    background-color: rgba(255, 218, 3, 1);
 }
 
 /* Hide Navigation Tab for Current Page */
@@ -197,7 +209,7 @@ body {
 /* =========================
    PAGE CONTENT CONTAINERS
    ========================= */
-.about-container, .choss-container {
+.about-container, .choss-container, .liminal-container {
     max-width: 550px;
     text-align: center;
     padding: 40px;
@@ -219,14 +231,14 @@ body {
     border: 0;
 }
 
-.about-container h1, .choss-container h1 {
+.about-container h1, .choss-container h1, .liminal-container h1 {
     position: relative;
     top: 50%;
     left: 0;
     font-size: 28px;
 }
 
-.about-container p, .choss-container p {
+.about-container p, .choss-container p, .liminal-container p {
     position: relative;
     top: 59%;
     font-size: 32px;
@@ -240,6 +252,15 @@ body {
 
 .about-container a:hover {
     text-decoration: underline;
+}
+
+.liminal-page {
+    --bg-color: #0b0b0b;
+    --text-color: #ffda03;
+    --nav-color: #ffda03;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 
@@ -267,15 +288,16 @@ body {
    RESPONSIVE DESIGN
    ========================= */
 @media (max-width: 768px) {
-    .nav a img {
-        width: 40px;
+    .nav a {
+        font-size: 14px;
+        padding: 4px 8px;
     }
 
-    .about-container h1, .choss-container h1 {
+    .about-container h1, .choss-container h1, .liminal-container h1 {
         font-size: 16px;
     }
 
-    .about-container p, .choss-container p {
+    .about-container p, .choss-container p, .liminal-container p {
         font-size: 12px;
     }
 
