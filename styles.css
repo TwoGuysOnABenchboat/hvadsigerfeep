@@ -16,18 +16,22 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     font-family: 'Micro 5', sans-serif !important;
     background-color: var(--bg-color, var(--bench-yellow));
     color: var(--text-color, var(--bench-black));
     --nav-color: var(--bench-yellow);
     --nav-text-color: var(--bench-black);
     overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
+    padding-top: 40px;
+    box-sizing: border-box;
 }
 
 body::before {
@@ -51,6 +55,12 @@ body > * {
 body.blog-page::before,
 body.blog-post-page::before {
     opacity: 0.2;
+}
+
+
+body.main-page {
+    justify-content: center;
+    padding-top: 0;
 }
 
 body.main-page::before {
@@ -81,7 +91,7 @@ body.main-page::before {
 }
 
 .nav a {
-    font-family: "Press Start 2P", "Micro 5", sans-serif;
+    font-family: "Micro 5", sans-serif;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -89,8 +99,8 @@ body.main-page::before {
     border: 2px solid currentColor;
     border-radius: 6px;
     font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-weight: 400;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--nav-text-color, var(--bench-black));
@@ -333,6 +343,22 @@ body.main-page::before {
     position: static;
 }
 
+.about-container #logo-image {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: min(450px, 84vw);
+    margin: 12px auto 24px;
+    display: block;
+}
+
+.about-container h1,
+.about-container p {
+    position: static;
+    top: auto;
+}
+
 .about-container a {
     color: var(--text-color, var(--bench-yellow));
     text-decoration: none;
@@ -401,7 +427,7 @@ body.main-page::before {
     grid-template-columns: minmax(180px, 320px) 1fr;
     align-items: start;
     text-decoration: none;
-    color: inherit;
+    color: var(--bench-black);
     background-color: var(--bench-white);
     border: 2px solid var(--bench-black);
     border-radius: 12px;
