@@ -41,13 +41,22 @@ scripts/generate_blog_index.sh
 **What the script does:**
 - Finds all `Blog/**/` HTML files (excluding `Blog/index.html`)
 - Reads each post’s:
-  - `<h1>` title
-  - `.blog-post-date`
+  - `<h1>` title (falls back to `<title>` or file name)
+  - `.blog-post-date` (falls back to `<time>` or folder date)
   - First normal paragraph (`<p>` not marked as the date)
-  - Banner image (`.blog-post-banner`)
+  - Banner image (`.blog-post-banner`, fallback first `<img>`, fallback `banner_*` file in post folder)
 - Rewrites `Blog/index.html` with a card for each post
 
 After running it, **commit and push** the updated `Blog/index.html`.
+
+### If the script "doesn't pick up" your new post
+1. Make sure the post file ends in `.html` (or `.htm`).
+2. Make sure the file is inside `Blog/YYYY/MM/DD/`.
+3. Run from repo root: `scripts/generate_blog_index.sh`.
+4. Check output message. It should say: `Generated Blog/index.html with X post(s).`
+5. If your card is missing image/date, ensure at least one of these exists:
+   - Banner: `.blog-post-banner`, or first `<img>`, or a file named `banner_*` in the same folder.
+   - Date: `.blog-post-date`, or `<time>`, or folder date path.
 
 ---
 
@@ -117,3 +126,18 @@ Change that `href` to point anywhere you want.
 ## 7) Keeping this guide updated
 
 Whenever we change how a system works (blog posts, colors, scripts, etc.), we will update this file (`HOW_TO_USE.md`) so you always have a single source of truth.
+
+---
+
+## 8) Avoiding PR merge conflicts
+
+Before starting edits on a branch, sync it with the latest `main`:
+
+```bash
+git checkout main
+git pull origin main
+git checkout your-branch
+git merge main
+```
+
+If GitHub still shows conflicts, it usually means `main` changed after your branch was created. Merge/rebase `main` again, then push your branch.
