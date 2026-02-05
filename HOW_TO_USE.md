@@ -38,6 +38,8 @@ The blog overview (`Blog/index.html`) is **generated** from your post HTML files
 scripts/generate_blog_index.sh
 ```
 
+> If you accidentally type `scripts/genreate_blog_index.sh` (misspelled), that now works too as a compatibility alias.
+
 **What the script does:**
 - Finds all `Blog/**/` HTML files (excluding `Blog/index.html`)
 - Reads each post’s:
@@ -134,6 +136,12 @@ Whenever we change how a system works (blog posts, colors, scripts, etc.), we wi
 Before starting edits on a branch, sync it with the latest `main`:
 
 ```bash
+git checkout main
+git pull origin main
+git checkout your-branch
+git merge main
+
+# before opening PR, do one more sync if others merged recently
 git checkout main
 git pull origin main
 git checkout your-branch
