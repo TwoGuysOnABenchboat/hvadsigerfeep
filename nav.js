@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="social-bar" aria-label="Benchboat social links">
             <a class="social-link" href="https://x.com/BenchBoatGames" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
             <a class="social-link" href="https://www.linkedin.com/company/bench-boat-games" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
-            //<a class="social-link" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a class="social-link" href="https://www.instagram.com/fuzzymelox/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
         </div>
     `;
 
