@@ -477,7 +477,7 @@ body.main-page::before {
     letter-spacing: 0.08em;
 }
 
-.blog-post-container p {
+.blog-post-page p {
     font-family: "IBM Plex Mono", "Micro 5", sans-serif !important;
     font-size: 20px;
     line-height: 1.6;
@@ -486,6 +486,10 @@ body.main-page::before {
 
 .blog-post-meta p {
     font-family: "IBM Plex Mono", "Micro 5", sans-serif !important;
+}
+
+.blog-post-page .blog-post-date {
+    font-family: "Press Start 2P", "Micro 5", sans-serif !important;
 }
 
 .blog-post-media {
