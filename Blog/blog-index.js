@@ -1,5 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
     const postList = document.querySelector(".blog-post-list");
+    const postArticle = document.querySelector(".blog-post-article");
+
+    if (postArticle) {
+        const orderedPostPaths = [
+            "/Blog/2026/02/05/2026_05_02.html",
+            "/Blog/2026/02/04/2026_04_02.html",
+            "/Blog/2026/02/03/2026_03_02.html"
+        ];
+        const postPath = window.location.pathname;
+        const normalizedPostPath = postPath.toLowerCase();
+        const normalizedOrdered = orderedPostPaths.map((path) => path.toLowerCase());
+
+        const currentIndex = normalizedOrdered.indexOf(normalizedPostPath);
+        if (currentIndex !== -1) {
+            const nav = document.createElement("div");
+            nav.className = "blog-post-nav";
+
+            const prevPath = orderedPostPaths[currentIndex + 1];
+            if (prevPath) {
+                const prevLink = document.createElement("a");
+                prevLink.className = "blog-post-nav-link blog-post-nav-prev";
+                prevLink.href = prevPath;
+                prevLink.setAttribute("aria-label", "Previous post");
+                prevLink.textContent = "← Prev";
+                nav.appendChild(prevLink);
+            }
+
+            const nextPath = orderedPostPaths[currentIndex - 1];
+            if (nextPath) {
+                const nextLink = document.createElement("a");
+                nextLink.className = "blog-post-nav-link blog-post-nav-next";
+                nextLink.href = nextPath;
+                nextLink.setAttribute("aria-label", "Next post");
+                nextLink.textContent = "Next →";
+                nav.appendChild(nextLink);
+            }
+
+            if (nav.childElementCount > 0) {
+                postArticle.insertAdjacentElement("afterbegin", nav);
+            }
+        }
+
+        return;
+    }
+
     if (!postList) return;
 
     const allPosts = Array.from(postList.querySelectorAll(".blog-post-card"));
