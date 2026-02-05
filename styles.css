@@ -30,7 +30,7 @@ body {
     overflow-x: hidden;
     overflow-y: auto;
     position: relative;
-    padding-top: 40px;
+    padding-top: 34px;
     box-sizing: border-box;
 }
 
@@ -116,6 +116,42 @@ body.main-page::before {
 /* Hide Navigation Tab for Current Page */
 .nav a[data-current="true"] {
     display: none;
+}
+
+
+.social-bar {
+    position: relative;
+    margin-top: auto;
+    width: 100%;
+    min-height: 36px;
+    background-color: var(--bench-yellow);
+    border-top: 2px solid var(--bench-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 4px 10px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 10px;
+    border: 2px solid var(--bench-black);
+    border-radius: 6px;
+    font-size: 16px;
+    color: var(--bench-black);
+    background-color: var(--bench-yellow);
+    text-decoration: none;
+    line-height: 1;
+}
+
+.social-link:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
 }
 
 
@@ -416,6 +452,29 @@ body.main-page::before {
     font-size: 20px;
 }
 
+.blog-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 0 0 16px;
+    color: var(--bench-white);
+}
+
+.blog-controls label {
+    font-size: 16px;
+}
+
+.blog-controls select {
+    font-family: "Micro 5", sans-serif;
+    font-size: 16px;
+    padding: 4px 8px;
+    border: 2px solid var(--bench-black);
+    border-radius: 6px;
+    background: var(--bench-white);
+    color: var(--bench-black);
+}
+
 .blog-post-list {
     display: grid;
     gap: 24px;
@@ -456,6 +515,31 @@ body.main-page::before {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.08em;
+}
+
+.blog-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    color: var(--bench-white);
+}
+
+.blog-pagination button {
+    font-family: "Micro 5", sans-serif;
+    font-size: 16px;
+    padding: 4px 10px;
+    border: 2px solid var(--bench-black);
+    border-radius: 6px;
+    background: var(--bench-yellow);
+    color: var(--bench-black);
+    cursor: pointer;
+}
+
+.blog-pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .blog-post-page {
@@ -557,6 +641,20 @@ body.main-page::before {
     .nav a {
         font-size: 14px;
         padding: 4px 8px;
+    }
+
+    .social-bar {
+        gap: 8px;
+        min-height: 34px;
+    }
+
+    .social-link {
+        font-size: 14px;
+        padding: 2px 8px;
+    }
+
+    .blog-controls {
+        justify-content: flex-start;
     }
 
     .about-container h1, .choss-container h1, .liminal-container h1 {
