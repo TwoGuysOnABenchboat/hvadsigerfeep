@@ -1,3 +1,7 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
+
 /* =========================
    GENERAL STYLES
    ========================= */
@@ -12,18 +16,22 @@
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     font-family: 'Micro 5', sans-serif !important;
     background-color: var(--bg-color, var(--bench-yellow));
     color: var(--text-color, var(--bench-black));
     --nav-color: var(--bench-yellow);
     --nav-text-color: var(--bench-black);
     overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
+    padding-top: 34px;
+    box-sizing: border-box;
 }
 
 body::before {
@@ -49,15 +57,16 @@ body.blog-post-page::before {
     opacity: 0.2;
 }
 
+
+body.main-page {
+    justify-content: center;
+    padding-top: 0;
+}
+
 body.main-page::before {
     background-image: url("Graphics/texture2.png");
     opacity: 0.08;
 }
-
-/* Import Pixel Font */
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
-
 
 /* =========================
    NAVIGATION BAR
@@ -82,7 +91,7 @@ body.main-page::before {
 }
 
 .nav a {
-    font-family: "Press Start 2P", "Micro 5", sans-serif;
+    font-family: "Micro 5", sans-serif;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -90,8 +99,8 @@ body.main-page::before {
     border: 2px solid currentColor;
     border-radius: 6px;
     font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
+    font-weight: 400;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--nav-text-color, var(--bench-black));
@@ -107,6 +116,42 @@ body.main-page::before {
 /* Hide Navigation Tab for Current Page */
 .nav a[data-current="true"] {
     display: none;
+}
+
+
+.social-bar {
+    position: relative;
+    margin-top: auto;
+    width: 100%;
+    min-height: 36px;
+    background-color: var(--bench-yellow);
+    border-top: 2px solid var(--bench-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 4px 10px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 10px;
+    border: 2px solid var(--bench-black);
+    border-radius: 6px;
+    font-size: 16px;
+    color: var(--bench-black);
+    background-color: var(--bench-yellow);
+    text-decoration: none;
+    line-height: 1;
+}
+
+.social-link:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
 }
 
 
@@ -334,6 +379,22 @@ body.main-page::before {
     position: static;
 }
 
+.about-container #logo-image {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: min(450px, 84vw);
+    margin: 12px auto 24px;
+    display: block;
+}
+
+.about-container h1,
+.about-container p {
+    position: static;
+    top: auto;
+}
+
 .about-container a {
     color: var(--text-color, var(--bench-yellow));
     text-decoration: none;
@@ -355,7 +416,7 @@ body.main-page::before {
 
 .blog-page {
     --bg-color: var(--bench-retro);
-    --text-color: var(--bench-black);
+    --text-color: var(--bench-white);
     --nav-color: var(--bench-yellow);
     --nav-text-color: var(--bench-black);
 }
@@ -367,7 +428,8 @@ body.main-page::before {
 }
 
 .blog-surface {
-    background-color: var(--bench-white);
+    background-color: var(--bench-black);
+    border: 2px solid rgba(244, 206, 12, 0.35);
     border-radius: 18px;
     padding: 48px 32px 32px;
     box-shadow: 0 18px 32px rgba(22, 21, 15, 0.18);
@@ -379,13 +441,38 @@ body.main-page::before {
 }
 
 .blog-hero h1 {
+    color: var(--bench-yellow);
     font-size: 36px;
     margin: 0 0 10px;
 }
 
 .blog-hero p {
+    color: var(--bench-white);
     margin: 0;
     font-size: 20px;
+}
+
+.blog-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 0 0 16px;
+    color: var(--bench-white);
+}
+
+.blog-controls label {
+    font-size: 16px;
+}
+
+.blog-controls select {
+    font-family: "Micro 5", sans-serif;
+    font-size: 16px;
+    padding: 4px 8px;
+    border: 2px solid var(--bench-black);
+    border-radius: 6px;
+    background: var(--bench-white);
+    color: var(--bench-black);
 }
 
 .blog-post-list {
@@ -399,8 +486,8 @@ body.main-page::before {
     grid-template-columns: minmax(180px, 320px) 1fr;
     align-items: start;
     text-decoration: none;
-    color: inherit;
-    background-color: rgba(244, 206, 12, 0.08);
+    color: var(--bench-black);
+    background-color: var(--bench-white);
     border: 2px solid var(--bench-black);
     border-radius: 12px;
     padding: 16px;
@@ -430,9 +517,34 @@ body.main-page::before {
     letter-spacing: 0.08em;
 }
 
+.blog-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    color: var(--bench-white);
+}
+
+.blog-pagination button {
+    font-family: "Micro 5", sans-serif;
+    font-size: 16px;
+    padding: 4px 10px;
+    border: 2px solid var(--bench-black);
+    border-radius: 6px;
+    background: var(--bench-yellow);
+    color: var(--bench-black);
+    cursor: pointer;
+}
+
+.blog-pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .blog-post-page {
     --bg-color: var(--bench-retro);
-    --text-color: var(--bench-black);
+    --text-color: var(--bench-white);
     --nav-color: var(--bench-yellow);
     --nav-text-color: var(--bench-black);
 }
@@ -466,6 +578,7 @@ body.main-page::before {
 }
 
 .blog-post-container h1 {
+    color: var(--bench-white);
     margin: 0 0 8px;
     font-size: 36px;
 }
@@ -528,6 +641,20 @@ body.main-page::before {
     .nav a {
         font-size: 14px;
         padding: 4px 8px;
+    }
+
+    .social-bar {
+        gap: 8px;
+        min-height: 34px;
+    }
+
+    .social-link {
+        font-size: 14px;
+        padding: 2px 8px;
+    }
+
+    .blog-controls {
+        justify-content: flex-start;
     }
 
     .about-container h1, .choss-container h1, .liminal-container h1 {

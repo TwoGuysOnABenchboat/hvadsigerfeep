@@ -125,6 +125,7 @@ const html = `<!DOCTYPE html>
     <title>Blog - Benchboat Games</title>
     <link rel="stylesheet" href="../styles.css">
     <script src="../nav.js" defer></script>
+    <script src="./blog-index.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Micro+5&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
