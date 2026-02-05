@@ -3,18 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const postArticle = document.querySelector(".blog-post-article");
 
     if (postArticle) {
-        const postPath = window.location.pathname.toLowerCase();
-        const postLinks = Array.from(document.querySelectorAll(".blog-post-list a"));
-        const postHrefs = postLinks
-            .map((link) => new URL(link.getAttribute("href"), window.location.origin).pathname.toLowerCase())
-            .filter(Boolean);
+        const orderedPostPaths = [
+            "/Blog/2026/02/05/2026_05_02.html",
+            "/Blog/2026/02/04/2026_04_02.html",
+            "/Blog/2026/02/03/2026_03_02.html"
+        ];
+        const postPath = window.location.pathname;
+        const normalizedPostPath = postPath.toLowerCase();
+        const normalizedOrdered = orderedPostPaths.map((path) => path.toLowerCase());
 
-        const currentIndex = postHrefs.indexOf(postPath);
+        const currentIndex = normalizedOrdered.indexOf(normalizedPostPath);
         if (currentIndex !== -1) {
             const nav = document.createElement("div");
             nav.className = "blog-post-nav";
 
-            const prevPath = postHrefs[currentIndex + 1];
+            const prevPath = orderedPostPaths[currentIndex + 1];
             if (prevPath) {
                 const prevLink = document.createElement("a");
                 prevLink.className = "blog-post-nav-link blog-post-nav-prev";
@@ -24,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 nav.appendChild(prevLink);
             }
 
-            const nextPath = postHrefs[currentIndex - 1];
+            const nextPath = orderedPostPaths[currentIndex - 1];
             if (nextPath) {
                 const nextLink = document.createElement("a");
                 nextLink.className = "blog-post-nav-link blog-post-nav-next";
