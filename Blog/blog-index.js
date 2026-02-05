@@ -1,5 +1,47 @@
 document.addEventListener("DOMContentLoaded", () => {
     const postList = document.querySelector(".blog-post-list");
+    const postArticle = document.querySelector(".blog-post-article");
+
+    if (postArticle) {
+        const postPath = window.location.pathname.toLowerCase();
+        const postLinks = Array.from(document.querySelectorAll(".blog-post-list a"));
+        const postHrefs = postLinks
+            .map((link) => new URL(link.getAttribute("href"), window.location.origin).pathname.toLowerCase())
+            .filter(Boolean);
+
+        const currentIndex = postHrefs.indexOf(postPath);
+        if (currentIndex !== -1) {
+            const nav = document.createElement("div");
+            nav.className = "blog-post-nav";
+
+            const prevPath = postHrefs[currentIndex + 1];
+            if (prevPath) {
+                const prevLink = document.createElement("a");
+                prevLink.className = "blog-post-nav-link blog-post-nav-prev";
+                prevLink.href = prevPath;
+                prevLink.setAttribute("aria-label", "Previous post");
+                prevLink.textContent = "← Prev";
+                nav.appendChild(prevLink);
+            }
+
+            const nextPath = postHrefs[currentIndex - 1];
+            if (nextPath) {
+                const nextLink = document.createElement("a");
+                nextLink.className = "blog-post-nav-link blog-post-nav-next";
+                nextLink.href = nextPath;
+                nextLink.setAttribute("aria-label", "Next post");
+                nextLink.textContent = "Next →";
+                nav.appendChild(nextLink);
+            }
+
+            if (nav.childElementCount > 0) {
+                postArticle.insertAdjacentElement("afterbegin", nav);
+            }
+        }
+
+        return;
+    }
+
     if (!postList) return;
 
     const allPosts = Array.from(postList.querySelectorAll(".blog-post-card"));
