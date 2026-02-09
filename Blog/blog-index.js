@@ -3,12 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const postArticle = document.querySelector(".blog-post-article");
 
     if (postArticle) {
-        const orderedPostPaths = [
-            "/Blog/2026/02/09/2026_09_02.html",
-            "/Blog/2026/02/05/2026_05_02.html",
-            "/Blog/2026/02/04/2026_04_02.html",
-            "/Blog/2026/02/03/2026_03_02.html"
-        ];
+        const orderedPostPaths = ['/Blog/2026/02/09/2026_09_02.html', '/Blog/2026/02/05/2026_05_02.html', '/Blog/2026/02/04/2026_04_02.html', '/Blog/2026/02/03/2026_03_02.html'];
         const postPath = window.location.pathname;
         const normalizedPostPath = postPath.toLowerCase();
         const normalizedOrdered = orderedPostPaths.map((path) => path.toLowerCase());
