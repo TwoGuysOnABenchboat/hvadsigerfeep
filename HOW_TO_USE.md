@@ -21,7 +21,7 @@ Blog/YYYY/MM/DD/
 3. Update these fields inside the HTML:
    - `<h1>` — post title
    - `<p class="blog-post-date">` — post date
-   - First regular `<p>` — this becomes the **summary** shown on the blog overview page
+   - First regular `<p>` — generator auto-creates the overview summary from this, trimmed to ~10 words + `...`
    - `<img class="blog-post-banner" ...>` — banner image at the top of the post
 4. Place any images or GIFs next to the HTML and reference them with relative paths.
 
@@ -48,6 +48,7 @@ scripts/generate_blog_index.sh
   - First normal paragraph (`<p>` not marked as the date)
   - Banner image (`.blog-post-banner`, fallback first `<img>`, fallback `banner_*` file in post folder)
 - Rewrites `Blog/index.html` with a card for each post
+- Rewrites `Blog/blog-index.js` with the ordered post path list used by next/prev nav
 
 After running it, **commit and push** the updated `Blog/index.html`.
 
