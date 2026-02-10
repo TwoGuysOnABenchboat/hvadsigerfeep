@@ -633,6 +633,15 @@ body.main-page::before {
     margin: 0 0 16px;
 }
 
+.inline-emote {
+    width: 1.2em;
+    height: 1.2em;
+    object-fit: contain;
+    vertical-align: -0.18em;
+    margin: 0 0.08em;
+    image-rendering: pixelated;
+}
+
 .blog-post-meta p {
     font-family: "IBM Plex Mono", "Micro 5", sans-serif !important;
 }
