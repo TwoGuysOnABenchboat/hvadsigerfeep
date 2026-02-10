@@ -1,73 +1,53 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liminal Brutalis: PA Update #3 - A colorful approach | Benchboat Games</title>
-    <meta name="description" content="Dev update #3 for Liminal Brutalis: Physical Agility covering a colorful new area, art pipeline details, and production insights." />
-    <meta name="robots" content="index,follow" />
-    <link rel="canonical" href="https://benchboatgames.com/Blog/2026/02/09/2026_09_02.html" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Liminal Brutalis: PA - Update #3 - A colorful approach" />
-    <meta property="og:description" content="Benchboat Games shares new environment art and workflow details from Liminal Brutalis." />
-    <meta property="og:url" content="https://benchboatgames.com/Blog/2026/02/09/2026_09_02.html" />
-    <meta property="og:image" content="https://benchboatgames.com/Blog/2026/02/09/banner_2026_09_02.png" />
-    <meta property="og:site_name" content="Benchboat Games" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Liminal Brutalis: PA - Update #3 - A colorful approach" />
-    <meta name="twitter:description" content="See new assets and production notes from Liminal Brutalis development." />
-    <meta name="twitter:image" content="https://benchboatgames.com/Blog/2026/02/09/banner_2026_09_02.png" />
-    <link rel="stylesheet" href="../../../../styles.css">
-    <script src="../../../../nav.js" defer></script>
-    <script src="../../../../Blog/blog-index.js" defer></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Micro+5&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      "headline": "Liminal Brutalis: PA - Update #3 - A colorful approach",
-      "datePublished": "2026-02-09",
-      "dateModified": "2026-02-09",
-      "author": {
-        "@type": "Organization",
-        "name": "Benchboat Games"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Benchboat Games",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://benchboatgames.com/Graphics/benchboat-logo.png"
-        }
-      },
-      "description": "Dev update #3 covering colorful environment work and production workflow details.",
-      "image": ["https://benchboatgames.com/Blog/2026/02/09/banner_2026_09_02.png"],
-      "mainEntityOfPage": "https://benchboatgames.com/Blog/2026/02/09/2026_09_02.html"
-    }
-    </script>
-</head>
-<body class="blog-post-page">
-    <main class="blog-post-container">
-        <div class="blog-surface blog-post-article">
-            <a class="blog-back" href="/Blog">← Back to blog</a>
-            <img class="blog-post-banner" src="banner_2026_09_02.png" alt="Banner">
-            <h1>Liminal Brutalis: PA - Update #3 - A colorful approach</h1>
-            <p class="blog-post-date">February 9, 2026</p>
-            <p>This sprint I'm working on quite a "colorful" area of the game. A stark contrast to the otherwise sterile, grey (Brutalistic) world of Liminal Brutalis. But don't be fooled, this place is not for leisure.</p>
-            <p>Here is a few of the funky assets!</p>
-            <img class="blog-post-media" src="blogpostMedia1_2026_09_02.png" alt="Blog">
-            <p>Fun fact! Every single asset uses a single 124x124 index-texture. This of course means that I have to "texture" the assets with color-assigned-UV-islands; which increases the poly-count slightly, but what we lose in pristine mesh optimization, we gain in draw-calls and texture memory.  </p>
-            <img class="blog-post-media" src="blogpostMedia2_2026_09_02.gif" alt="BenchBoatGames Van asset">
-            <p>They're are also a ton of fun to make and — In my opinion — gain a lot of personality simply as a consequence of this workflow.</p>
-            <img class="blog-post-media" src="blogpostMedia3_2026_09_02.gif" alt="BenchBoatGames Cam Asset">
-            <p>Thanks for reading and checking out our game!
-            If you have any questions reach out at TwoGuysOnABenchboat@protonmail.com or at our socials listed below *(The Discord server is still for closed invites only atm. I Don't have the capacity to deal with a flood of people yet (Wishful thinking))*.</p>
-            <p>Cheers, Casper (Art-Man)</p>
-            <p>PS-Disclaimer: Bench Boat Games does NOT use any form of generative AI in the production of our games OR these blogposts. Enjoy the wonders and flaws of real human creativity.</p>
-        </div>
-    </main>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Liminal Brutalis: First Devlog - Benchboat Games</title>
+        <link rel="stylesheet" href="../../../../styles.css" />
+        <script src="../../../../nav.js" defer></script>
+        <script src="../../../../Blog/blog-index.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Micro+5&family=Pixelify+Sans:wght@400..700&display=swap"
+            rel="stylesheet" />
+    </head>
+    <body class="blog-post-page">
+        <main class="blog-post-container">
+            <div class="blog-surface blog-post-article">
+                <a class="blog-back" href="/Blog">← Back to blog</a>
+                <img class="blog-post-banner" src="banner_2026_09_02.png" alt="Banner" />
+                <h1>Liminal Brutalis: PA - Update #3 - A colorful approach</h1>
+                <p class="blog-post-date">February 9, 2026</p>
+                <p>
+                    This sprint I'm working on quite a "colorful" area of the game&nbsp;<img class="inline-emote" src="../../../../Graphics/Emotes/bb_Fiending.png" alt=":beer:"> <br>A stark contrast to the otherwise
+                    sterile, grey <i>(Brutalistic if you will)</i> world of <b>Liminal Brutalis</b>. But don't be fooled, this place is not for
+                    leisure.
+                </p>
+                <p><b>Here is a few of the funky assets!</b></p>
+                <img class="blog-post-media" src="blogpostMedia1_2026_09_02.png" alt="Blog" />
+                <p>
+                    Fun fact! Every single asset uses a single <b>124x124</b> index-texture <i>(I know. That's too many pixels).</i> <img class="inline-emote" src="../../../../Graphics/Emotes/BB_Stare.gif" alt=":beer:">&nbsp;This of course means that I have
+                    to <i>"texture"</i> each asset using color-assigned-UV-islands; which increases the poly-count slightly. <br><br>But
+                    what we lose in <i>pristine mesh optimization</i>, we gain in draw-calls, texture memory, simplicity and, best of all, fun!<img class="inline-emote" src="../../../../Graphics/Emotes/bb_Wow.png" alt=":beer:"></p>
+                <img class="blog-post-media" src="blogpostMedia2_2026_09_02.gif" alt="BenchBoatGames Van asset" />
+                <p>
+                    They're are also a ton of fun to make and — <i>In my opinion</i> — gain a lot of personality simply as a
+                    consequence of this workflow.<br><br>It is very much the same workflow I used when I worked for Brightstar on the MMORPG <b>Embersword &gt; https://www.artstation.com/artwork/4NNQ2L</b><br><br><br></p>
+                <img class="blog-post-media" src="blogpostMedia3_2026_09_02.gif" alt="BenchBoatGames Cam Asset" />
+                <p>
+                    Thanks for reading and checking out our game! If you have any questions reach out at
+                    <b>TwoGuysOnABenchboat@protonmail.com</b> or at our socials listed below. <br><br><i>(The Discord server is still for
+                    closed invites only atm. I Don't have the capacity to deal with a flood of people yet (Wishful
+                    thinking)).</i>
+                </p>
+                <p>Cheers, Casper (Art-Man)</p>
+                <p>
+                    <b>PS-Disclaimer:</b> <b>Bench Boat Games</b> does <b>NOT</b> use any form of generative AI in the production of our
+                    games OR these blogposts. Enjoy the wonders and flaws of real human creativity.
+                <br><br><i>(Sorry I lied; Chat GPT helps me to understand &amp; fix my horrible .html code for this site. "But Casper! Just hire a professional!" Oh sure. I'll do that as soon as you give me the money to make that happen. Deal? I'll even hire you! Then you can give me money, and I can give you money!)</i></p>
+            </div>
+        </main>
+    </body>
 </html>
